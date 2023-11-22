@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CetContact.Pages.ContactsPage"
+             Title="Contacts">
+    <VerticalStackLayout>
+        <ListView x:Name="ContactList">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Margin="10,10,10,10">
+                            <Label Text="{Binding Name}"/>
+                            <Label Text="{Binding Email}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Edit Person" x:Name="EditContactButton" Clicked="EditContactButton_Clicked"></Button>
+        <Button Text="Add Person" x:Name="AddContactButton" Clicked="AddContactButton_Clicked"></Button>
+    </VerticalStackLayout>
+</ContentPage>
