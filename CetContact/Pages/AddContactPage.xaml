@@ -5,9 +5,11 @@
              Title="AddContact">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Add A New Contact"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        
+        
         <Button Text="Go Back to Main Page" x:Name="GoBackButton" Clicked="GoBackButton_Clicked"></Button>
     </VerticalStackLayout>
 </ContentPage>

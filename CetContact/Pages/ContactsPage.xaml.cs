@@ -3,13 +3,11 @@ using CetContact.Model;
 
 public partial class ContactsPage : ContentPage
 {
+        List<ContactInfo> contactsList= new List<ContactInfo>();
 	public ContactsPage()
 	{
 		InitializeComponent();
-        List<ContactInfo> contacts= new List<ContactInfo>();
-        // contacts.Add(new ContactInfo("Ufuk","Hisarustu", "ufuk.adanir@boun.edu.tr",5553332211));
-
-        contacts.Add(new ContactInfo()
+        contactsList.Add(new ContactInfo()
         {
             Name = "Ufuk",
             Email = "ufuk.adanir@boun.edu.tr",
@@ -17,17 +15,16 @@ public partial class ContactsPage : ContentPage
             Phone = 5553332211
         }
         );
-        ContactList.ItemsSource = contacts;
 
-        contacts.Add(new ContactInfo() 
+        contactsList.Add(new ContactInfo() 
         { 
-            Name = "Busra",
-            Email = "busra.kosem@boun.edu.tr",
+            Name = "Ceyhan/Adana",
+            Email = "ceyhan.kosem@alumni.boun.edu.tr",
             Adress = "Hisarustu",
             Phone = 5554443322 
         }
         );
-        ContactList.ItemsSource = contacts;
+        ContactList.ItemsSource = contactsList;
 	}
 
     private void AddContactButton_Clicked(object sender, EventArgs e)
@@ -38,5 +35,9 @@ public partial class ContactsPage : ContentPage
     private void EditContactButton_Clicked(object sender, EventArgs e)
     {
         Shell.Current.GoToAsync(nameof(EditContactPage));
+    }
+
+    private void DeleteContactButton_Clicked(object sender, EventArgs e)
+    {
     }
 }
