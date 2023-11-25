@@ -1,11 +1,13 @@
 namespace CetContact.Pages;
 using CetContact.Model;
+using System.Collections.ObjectModel;
 
 public partial class ContactsPage : ContentPage
 {
-        List<ContactInfo> contactsList= new List<ContactInfo>();
-	public ContactsPage()
+    public ObservableCollection<ContactInfo> contactsList { get; set; }
+public ContactsPage()
 	{
+        contactsList = new ObservableCollection<ContactInfo>();
 		InitializeComponent();
         contactsList.Add(new ContactInfo()
         {
@@ -39,5 +41,15 @@ public partial class ContactsPage : ContentPage
 
     private void DeleteContactButton_Clicked(object sender, EventArgs e)
     {
+        
+        if (sender is Button button && button.BindingContext is ContactInfo contactPerson)
+        {
+            // Remove the contact when the associated button is clicked
+            RemoveContact(contactPerson);
+        }
+    }
+    private void RemoveContact(ContactInfo contactPerson)
+    {
+        contactsList.Remove(contactPerson);
     }
 }

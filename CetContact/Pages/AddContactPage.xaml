@@ -8,8 +8,30 @@
             Text="Add A New Contact"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        
-        
+        <StackLayout>
+            <!-- Name Entry -->
+            <Label Text="Name:" />
+            <Entry x:Name="NameEntry" Placeholder="Enter name" />
+
+            <!-- Address Entry -->
+            <Label Text="Address:" />
+            <Entry x:Name="AddressEntry" Placeholder="Enter address" />
+
+            <!-- Email Entry -->
+            <Label Text="Email:" />
+            <Entry x:Name="EmailEntry" Placeholder="Enter email" Keyboard="Email" />
+
+            <!-- Phone Number Entry -->
+            <Label Text="Phone Number:" />
+            <Entry x:Name="PhoneNumberEntry" Placeholder="Enter phone number" Keyboard="Telephone" />
+
+            <!-- Save Button -->
+
+        </StackLayout>
+
+        <StackLayout Margin="10,20,10,20">
+            <Button Text="Save" x:Name="SaveButton" Clicked="SaveButton_Clicked"/>
         <Button Text="Go Back to Main Page" x:Name="GoBackButton" Clicked="GoBackButton_Clicked"></Button>
+        </StackLayout>
     </VerticalStackLayout>
 </ContentPage>
